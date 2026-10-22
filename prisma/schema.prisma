@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model FlightListing {
+  id             Int    @id
+  travellingFrom String
+  destination    String
+  startTime      String
+  journeyMinutes Int
+  price          Int
+  rating         Int
+}

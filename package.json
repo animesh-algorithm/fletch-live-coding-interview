@@ -1,0 +1,35 @@
+{
+  "name": "fletch-live-coding-interview",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "check": "npm run lint && npm run build",
+    "postinstall": "prisma generate",
+    "db:setup": "prisma generate && prisma db push && prisma db seed",
+    "db:seed": "prisma db seed",
+    "vercel-build": "npm run db:setup && next build"
+  },
+  "dependencies": {
+    "next": "16.4.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "axios": "^1.12.0",
+    "zod": "^4.1.0",
+    "@prisma/client": "^7.10.1",
+    "@prisma/adapter-better-sqlite3": "^7.10.1",
+    "dotenv": "^18.0.8"
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "eslint-config-next": "16.4.2",
+    "prisma": "^7.10.1"
+  },
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  }
+}
